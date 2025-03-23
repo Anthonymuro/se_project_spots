@@ -1,0 +1,127 @@
+.profile {
+  display: flex;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 34px 0 20px;
+  border-bottom: 1px #212121 solid;
+}
+.profile__avatar {
+  height: 190px;
+  width: 190px;
+  margin-right: 20px;
+}
+.profile__column {
+  display: flex;
+  flex-direction: column;
+}
+.profile__name {
+  font-weight: 500;
+  margin: 0 0 12px;
+  max-width: 420px;
+  font-size: 32px;
+  line-height: 1;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-clamp: 3; /* Standard property */
+  -webkit-box-orient: vertical;
+}
+.profile__description {
+  margin: 0;
+  font-family: poppins, sans-serif, Arial;
+  width: 97px;
+  font-size: 16px;
+  line-height: 100%;
+  opacity: 70%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.profile__edit-btn {
+  margin-top: auto;
+  color: #212121;
+  /* width: 107.34px; */
+  /* height: 16px; */
+  line-height: 100%;
+  font-size: 16px;
+  opacity: 70%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  background: none;
+  border: none;
+  cursor: pointer; /* Standard property */
+}
+.profile__add-btn {
+  margin-top: auto;
+  margin-left: auto;
+  font-family: poppins, sans-serif, Arial;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0%;
+  font-size: 16px;
+  height: 52px;
+  border-radius: 8px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-left: 32px;
+  padding-right: 32px;
+  background-color: #212121;
+  color: #fcf5e5;
+  /* display: flex;
+  /* justify-content: center; */
+  /* align-items: center;  can't seem to space the plus sign and new post */
+  cursor: pointer;
+}
+@media screen and (max-width: 627px) {
+  .profile {
+    flex-direction: column;
+    max-width: 288px;
+    align-items: center;
+    text-align: center;
+    padding-top: 20px;
+  }
+  .profile__avatar {
+    height: 80px;
+    width: 80px;
+    margin-bottom: 12px;
+    margin: 0 0 12px;
+    border-radius: 10%;
+  }
+  .profile__name {
+    font-size: 20px;
+    margin: 0 0 12px;
+    max-width: 288px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    line-height: normal;
+    text-align: center;
+  }
+  .profile__description {
+    max-width: 288px;
+    margin: 0 0 32px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+  }
+  .profile__column {
+    margin: 0 0 20px;
+  }
+  .profile__add-btn {
+    margin-left: 0;
+    width: 100%; /* Standard property */
+    padding: 18px 32px;
+  }
+  .profile__edit-btn {
+    width: 107.34px;
+    /* height: 16px; */
+    font-size: 16px;
+    opacity: 70%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    border-radius: 90px;
+  }
+}
