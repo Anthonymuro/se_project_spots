@@ -1,0 +1,14 @@
+.footer {
+  text-align: center;
+  padding: 10px;
+  color: #212121;
+  font-size: 16px;
+  height: 16px;
+  /* width: 104px; */ /* isn't working properly */
+}
+@media screen and (max-width: 627px) {
+  .footer {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
