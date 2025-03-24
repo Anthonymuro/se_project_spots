@@ -38,7 +38,7 @@ The project contains:
 
 ## Deployment
 
-You can view the live project on GitHub Pages: [Project Link](https://github.com/Anthonymuro?tab=repositories)
+You can view the live project on GitHub Pages: [Project Link](https://github.com/Anthonymuro/se_project_spots)
 
 ## Validation
 
