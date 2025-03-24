@@ -1,5 +1,6 @@
 .cards {
   padding-top: 20px;
+  border-radius: 1px;
 }
 
 .cards__list {
@@ -9,10 +10,11 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(413px, 1fr));
   justify-content: center;
-  gap: 40px 20px;
+  gap: 40px 20px; /* Default gap */
 }
 @media screen and (max-width: 627px) {
   .cards__list {
     grid-template-columns: repeat(auto-fill, 288px (288px, 1fr));
+    gap: 20px 10px; /* Adjusted gap for mobile screens */
   }
 }
