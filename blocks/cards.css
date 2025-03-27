@@ -1,6 +1,10 @@
 .cards {
+  max-width: 1320px;
   padding-top: 20px;
   border-radius: 1px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between cards */
 }
 
 .cards__list {
@@ -16,5 +20,18 @@
   .cards__list {
     grid-template-columns: repeat(auto-fill, 288px (288px, 1fr));
     gap: 20px 10px; /* Adjusted gap for mobile screens */
+  }
+  /* Two cards per row (880px - 1320px) */
+  @media (max-width: 1320px) {
+    .card {
+      flex: 1 1 (50% - 20px);
+    }
+  }
+  /* One card per row (630px - 880px) */
+  @media (max-width: 880px) {
+    .card {
+      flex: 1 1 100%;
+      max-width: 600px;
+    }
   }
 }

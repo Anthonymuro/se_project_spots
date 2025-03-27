@@ -40,8 +40,6 @@
 .profile__edit-btn {
   margin-top: auto;
   color: #212121;
-  /* width: 107.34px; */
-  /* height: 16px; */
   line-height: 100%;
   font-size: 16px;
   opacity: 70%;
@@ -68,9 +66,6 @@
   padding-right: 32px;
   background-color: #212121;
   color: #fcf5e5;
-  /* display: flex;
-  /* justify-content: center; */
-  /* align-items: center;  can't seem to space the plus sign and new post */
   cursor: pointer;
 }
 @media screen and (max-width: 627px) {
@@ -116,7 +111,6 @@
   }
   .profile__edit-btn {
     width: 107.34px;
-    /* height: 16px; */
     font-size: 16px;
     opacity: 70%;
     text-overflow: ellipsis;

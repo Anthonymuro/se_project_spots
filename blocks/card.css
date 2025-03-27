@@ -1,14 +1,26 @@
 .card {
-  cursor: pointer;
+  margin: 0;
+  max-width: 420px; /* Match desktop size */
+}
+.card__title {
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  color: #212121;
 }
 .card__image {
   height: 445px;
   width: 413px;
   object-fit: cover;
   display: block;
-  border-radius: 1%;
+  border-radius: 8px;
+  cursor: pointer;
 }
 .card__content {
+  max-width: 413px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -26,11 +38,18 @@
   background-repeat: no-repeat; /*styles to match the design */
   background-color: transparent;
   opacity: 40%;
+  cursor: pointer;
+}
+.card__like-button:hover {
+  opacity: 100%;
 }
 @media screen and (max-width: 627px) {
+  .card {
+    margin: auto;
+  }
   .card__image {
     height: 288px;
-    border-radius: 8px;
+    width: 288px;
     padding-left: 16px;
     padding-right: 16px;
   }
