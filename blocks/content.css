@@ -2,7 +2,7 @@
   padding: 0 20px;
 }
 @media (max-width: 320px) {
-  .container {
+  .content {
     padding: 0 16px;
   }
 }
