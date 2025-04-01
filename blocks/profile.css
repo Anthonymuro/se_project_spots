@@ -3,13 +3,13 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 34px 0 20px;
-  border-bottom: 1px #212121 solid;
-  opacity: 70%;
+  border-bottom: 1px #21212166 solid;
 }
 .profile__avatar {
   height: 190px;
   width: 190px;
   margin-right: 20px;
+  border-radius: 8px;
 }
 .profile__column {
   display: flex;
@@ -30,8 +30,10 @@
 }
 .profile__description {
   margin: 0;
+  font-weight: 500;
+  color: #212121;
   font-family: poppins, sans-serif, Arial;
-  width: 97px;
+  max-width: 97px;
   font-size: 16px;
   line-height: 100%;
   opacity: 70%;
@@ -40,6 +42,7 @@
   overflow: hidden;
 }
 .profile__edit-btn {
+  border: none;
   margin-top: auto;
   margin-right: auto;
   font-weight: 500;
@@ -60,17 +63,29 @@
   font-family: poppins, sans-serif, Arial;
   font-weight: 500;
   line-height: normal;
-  letter-spacing: 0%;
+  letter-spacing: normal; /* 0% is unnecessary so i used normal*/
   font-size: 16px;
   height: 52px;
   border-radius: 8px;
-  padding-top: 18px;
-  padding-bottom: 18px;
+  padding: 18px 32px; /* Standard property */
+  /* padding-top: 18px;         ill come back to this */
+  /* padding-bottom: 18px;
   padding-left: 32px;
-  padding-right: 32px;
+  padding-right: 32px; */
   background-color: #212121;
   color: #fcf5e5;
   cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  justify-content: center;
+}
+.profile__add-btn:hover {
+  background-color: #212121;
+  opacity: 80%;
+}
+.profile__edit-btn:hover {
+  color: #212121;
+  opacity: 100%;
 }
 @media screen and (max-width: 627px) {
   .profile {

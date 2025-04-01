@@ -1,20 +1,23 @@
 .cards {
   max-width: 1320px;
   padding-top: 20px;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
   border-bottom: 1px solid #21212166;
   display: flex;
   flex-direction: column;
   gap: 20px; /* Space between cards */
+  justify-content: center; /* Center the cards */
+  align-items: center; /* Center the cards */
 }
 
 .cards__list {
   list-style-type: none;
+  gap: 20px 10px; /* Adjusted gap for mobile screens */
   padding: 0;
   margin: 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(413px, 1fr));
-  justify-content: center;
+  justify-content: center; /* Center the cards */
 }
 @media screen and (max-width: 627px) {
   .cards__list {
