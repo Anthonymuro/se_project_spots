@@ -4,7 +4,7 @@
 .card__title {
   font-family: Poppins, sans-serif, sans-serif;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 20px; /* fixed as i did last summition*/
   line-height: 100%;
   text-align: center;
   text-overflow: ellipsis;
@@ -30,7 +30,7 @@
   font-weight: 500;
   font-size: 20px;
   line-height: 120;
-  margin: 12px 0 0;
+  margin: 12px 0 0; /* fixed as i did last summition*/
   display: flex;
   justify-content: space-between;
   padding-bottom: 40px;
@@ -46,7 +46,7 @@
   background-position: center;
   background-repeat: no-repeat; /*styles to match the design */
   background-color: transparent;
-  opacity: 40%;
+  opacity: 40%; /* fixed as i did last summition was 70%*/
   cursor: pointer;
 }
 .card__like-button:hover {
@@ -57,6 +57,7 @@
     margin: auto;
   }
   .card__title {
+    /* fixed as i did last summition was font-family*/
     font-weight: 500;
     font-size: 16px;
     line-height: 100%;

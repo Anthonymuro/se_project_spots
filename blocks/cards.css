@@ -1,7 +1,7 @@
 .cards {
   max-width: 1320px;
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 20px; /* fixed as i did last summition was 40*/
   border-bottom: 1px solid #21212166;
   display: flex;
   flex-direction: column;
@@ -12,7 +12,7 @@
 
 .cards__list {
   list-style-type: none;
-  gap: 20px 10px; /* Adjusted gap for mobile screens */
+  gap: 20px 10px; /* Adjusted gap for mobile screens */ /* fixed as i did last summition wasn't any gaps*/
   padding: 0;
   margin: 0;
   display: grid;

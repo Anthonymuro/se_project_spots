@@ -3,13 +3,13 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 34px 0 20px;
-  border-bottom: 1px #21212166 solid;
+  border-bottom: 1px #21212166 solid; /* fixed as i did last summition*/
 }
 .profile__avatar {
   height: 190px;
   width: 190px;
   margin-right: 20px;
-  border-radius: 8px;
+  border-radius: 8px; /* fixed as i did last summition*/
 }
 .profile__column {
   display: flex;
@@ -30,8 +30,8 @@
 }
 .profile__description {
   margin: 0;
-  font-weight: 500;
-  color: #212121;
+  font-weight: 500; /* fixed as i did last summition*/
+  color: #212121; /* fixed as i did last summition*/
   font-family: poppins, sans-serif, Arial;
   max-width: 97px;
   font-size: 16px;
@@ -42,7 +42,7 @@
   overflow: hidden;
 }
 .profile__edit-btn {
-  border: none;
+  border: none; /* fixed as i did last summition had it added already*/
   margin-top: auto;
   margin-right: auto;
   font-weight: 500;

@@ -8,9 +8,11 @@
   font-size: 16px;
   top: 1340px;
   padding: 60px 0;
+  /* fixed as i did last summition had width had it (removed)*/
 }
 
 p {
+  /* fixed as i did last summition had removed @media screen and put <p>*/
   font-family: Poppins, sans-serif, Arial, Helvetica;
   font-weight: 400;
   font-size: 16px;
