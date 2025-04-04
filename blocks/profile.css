@@ -24,7 +24,8 @@
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
-  line-clamp: 3; /* Standard property */
+  -webkit-line-clamp: 3; /* Standard property */
+  line-clamp: 3; /* Added for compatibility */
   -webkit-box-orient: vertical;
   color: #212121;
 }
@@ -68,23 +69,18 @@
   height: 52px;
   border-radius: 8px;
   padding: 18px 32px; /* Standard property */
-  /* padding-top: 18px;         ill come back to this */
-  /* padding-bottom: 18px;
-  padding-left: 32px;
-  padding-right: 32px; */
+  border: none;
   background-color: #212121;
   color: #fcf5e5;
   cursor: pointer;
-  text-align: center;
-  display: inline-block;
-  justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 .profile__add-btn:hover {
-  background-color: #212121;
   opacity: 80%;
 }
 .profile__edit-btn:hover {
-  color: #212121;
   opacity: 100%;
 }
 @media screen and (max-width: 627px) {
@@ -124,6 +120,6 @@
   }
   .profile__edit-btn {
     font-size: 16px;
-    opacity: 70%;
+    margin: 0;
   }
 }

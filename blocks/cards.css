@@ -1,40 +1,29 @@
 .cards {
-  max-width: 1320px;
   padding-top: 20px;
-  padding-bottom: 20px; /* fixed as i did last summition was 40*/
+  padding-bottom: 40px; /* fixed as i did last summition was 40*/
   border-bottom: 1px solid #21212166;
-  display: flex;
-  flex-direction: column;
-  gap: 20px; /* Space between cards */
-  justify-content: center; /* Center the cards */
-  align-items: center; /* Center the cards */
 }
 
 .cards__list {
   list-style-type: none;
-  gap: 20px 10px; /* Adjusted gap for mobile screens */ /* fixed as i did last summition wasn't any gaps*/
+  gap: 40px 20px; /* Adjusted gap for mobile screens */
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(413px, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
   justify-content: center; /* Center the cards */
+}
+@media screen and (max-width: 1280px) {
+  .cards__list {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+  }
 }
 @media screen and (max-width: 627px) {
   .cards__list {
-    grid-template-columns: repeat(auto-fill, 288px (288px, 1fr));
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(288px, 1fr)
+    ); /* One column for small screens */
     gap: 20px 10px; /* Adjusted gap for mobile screens */
-  }
-  /* Two cards per row (880px - 1320px) */
-  @media (max-width: 1320px) {
-    .card {
-      flex: 1 1 (50% - 20px);
-    }
-  }
-  /* One card per row (630px - 880px) */
-  @media (max-width: 880px) {
-    .card {
-      flex: 1 1 100%;
-      max-width: 600px;
-    }
   }
 }

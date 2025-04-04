@@ -1,10 +1,12 @@
+/* i think i go it this time thank you for helping me/guide me figma been a bit tricky for me */
 .card {
   max-width: 420px; /* Match desktop size */
 }
 .card__title {
+  max-width: 350px;
   font-family: Poppins, sans-serif, sans-serif;
   font-weight: 500;
-  font-size: 20px; /* fixed as i did last summition*/
+  font-size: 20px;
   line-height: 100%;
   text-align: center;
   text-overflow: ellipsis;
@@ -18,7 +20,6 @@
 .card__image {
   height: 413px;
   width: 413px;
-  padding-bottom: 40px;
   object-fit: cover;
   display: block;
   border-radius: 8px;
@@ -26,14 +27,9 @@
 }
 .card__content {
   max-width: 413px;
-  font-family: poppins, sans-serif, sans-serif;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 120;
-  margin: 12px 0 0; /* fixed as i did last summition*/
+  margin: 12px 0 0;
   display: flex;
   justify-content: space-between;
-  padding-bottom: 40px;
 }
 .card__like-button {
   background-image: url(../images/like.icon2.svg);
@@ -44,9 +40,9 @@
   border: none;
   background-size: contain;
   background-position: center;
-  background-repeat: no-repeat; /*styles to match the design */
+  background-repeat: no-repeat;
   background-color: transparent;
-  opacity: 40%; /* fixed as i did last summition was 70%*/
+  opacity: 40%;
   cursor: pointer;
 }
 .card__like-button:hover {
@@ -57,26 +53,21 @@
     margin: auto;
   }
   .card__title {
-    /* fixed as i did last summition was font-family*/
+    max-width: 250px;
     font-weight: 500;
     font-size: 16px;
     line-height: 100%;
     letter-spacing: 0%;
     text-align: center;
     font-family: Poppins;
-    color: #212121b2;
-    opacity: 70%;
+    color: #212121;
   }
   .card__image {
     height: 288px;
     width: 288px;
-    padding-left: 16px;
-    padding-right: 16px;
   }
   .card__content {
     display: flex;
     justify-content: space-between;
-    padding-top: 20px;
-    padding-left: 16px;
   }
 }
