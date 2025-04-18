@@ -34,7 +34,7 @@ The project contains:
 
 ## screen record
 
-[Watch the demo video](https://drive.google.com/file/d/1MahBLnX800Zrwdzb1raFMyi0hYPV020X/view?usp=drive_link)
+[Watch the demo video](https://drive.google.com/file/d/1MahBLnX800Zrwdzb1raFMyi0hYPV020X/view?usp=sharing)
 
 ## Deployment
 
