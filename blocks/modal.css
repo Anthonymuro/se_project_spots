@@ -19,7 +19,7 @@
   font-size: 32px;
   line-height: 100%;
 }
-.modal_is-opened {
+.modal__is-opened {
   visibility: visible;
 }
 .modal__container {
@@ -34,6 +34,8 @@
 }
 .modal__submit-btn {
   cursor: pointer;
+  max-width: 156px;
+  max-width: none; /* Remove max-width to allow for fixed width */
   color: #fcf5e5; /* Light text color */
   background-color: #212121; /* Dark background */
   padding: 18px 32px; /* Adjusted padding for better button size */
@@ -68,9 +70,12 @@
     padding: 16px 24px;
   }
   .modal__close-btn {
-    top: 16px;
-    right: 16px;
-    width: 28px;
-    height: 28px;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 24px;
+    padding: 18px 32px;
+  }
+  .modal__submit-btn {
+    max-width: none; /* Remove max-width to allow for fixed width */
   }
 }
