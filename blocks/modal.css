@@ -4,7 +4,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  visibility: hidden; /* This can be handled with opacity */
   position: fixed;
   top: 0;
   left: 0;
@@ -12,6 +11,9 @@
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
   z-index: 1000; /* Ensure it appears above other content */
+  opacity: 0;
+  visibility: hidden; /* Hidden by default */
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
 }
 .modal__title {
   font-family: poppins, sans-serif, Arial;
@@ -21,6 +23,8 @@
 }
 .modal__is-opened {
   visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
 .modal__container {
   max-width: 730px;
@@ -34,8 +38,6 @@
 }
 .modal__submit-btn {
   cursor: pointer;
-  max-width: 156px;
-  max-width: none; /* Remove max-width to allow for fixed width */
   color: #fcf5e5; /* Light text color */
   background-color: #212121; /* Dark background */
   padding: 18px 32px; /* Adjusted padding for better button size */
@@ -47,6 +49,7 @@
 .modal__input {
   cursor: pointer;
   display: flex;
+  box-sizing: border-box;
   width: 100%;
   margin: auto;
   padding: 12px 16px; /* Adjusted padding for better input size */
@@ -55,9 +58,11 @@
   margin-bottom: 32px; /* Space between inputs */
 }
 .modal__close-btn {
+  background-image: url(../images/Group\ 27.svg); /* Close icon */
+  opacity: 40%;
   position: absolute;
   top: 32px;
-  right: 16px; /* Adjusted position to fit better was 50px */
+  right: 16px;
   width: 40px;
   height: 40px;
   background-color: transparent;
@@ -70,9 +75,10 @@
     padding: 16px 24px;
   }
   .modal__close-btn {
+    padding: 12px;
     font-size: 20px;
     font-weight: 500;
-    margin: 24px;
+    margin: 0;
     padding: 18px 32px;
   }
   .modal__submit-btn {

@@ -3,8 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="???" />
-    <meta name="keywords" content="HTML, CSS,???" />
+    <meta name="author" content="Anthony Muro" />
+    <meta
+      name="keywords"
+      content="HTML, CSS, JavaScripts, Spots, Travel, Post"
+    />
     <link rel="stylesheet" href="pages/index.css" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <title>Spots</title>
@@ -12,7 +15,7 @@
   <body>
     <div class="page">
       <header class="header">
-        <img src="./images/logo.svg" alt="spot logo" class="header__log" />
+        <img src="./images/logo.svg" alt="spot logo" class="header__logo" />
       </header>
       <main class="content">
         <section class="profile page__section">
@@ -48,7 +51,7 @@
             <li class="card">
               <img
                 src="./images/2-photo-by-ceiline-from-pexels.jpg"
-                alt="resturant with outdoor dinning"
+                alt="resturant with outdoor dining"
                 class="card__image"
               />
               <div class="card__content">
@@ -108,7 +111,11 @@
       </footer>
       <div class="modal" id="new-post-modal">
         <div class="modal__container">
-          <button type="button" class="modal__close-btn">x</button>
+          <button
+            type="button"
+            class="modal__close-btn"
+            aria-label="close modal"
+          ></button>
           <h2 class="modal__title">New post</h2>
           <form class="modal__form">
             <label for="card-image-input" class="modal__form">
@@ -135,7 +142,11 @@
       </div>
       <div class="modal" id="edit-profile-modal">
         <div class="modal__container">
-          <button type="button" class="modal__close-btn">x</button>
+          <button
+            type="button"
+            class="modal__close-btn"
+            aria-label="close modal"
+          ></button>
           <h2 class="modal__title">Edit Profile</h2>
           <form class="modal__form">
             <label for="profile-name-input" class="modal__form">
