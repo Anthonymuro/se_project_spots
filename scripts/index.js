@@ -36,7 +36,6 @@ editprofileclosebtn.addEventListener("click", function () {
 });
 // close modal new post
 function handleEditprofilesubmit(evt) {
-  // Prevent default browser behavior.
   evt.preventDefault();
   profilename.textContent = editprofilenameinput.value;
   profiledescription.textContent = editprofiledescriptioninput.value;
@@ -51,7 +50,6 @@ const nameInput = addCardModal.querySelector("#card-name-input");
 const linkInput = addCardModal.querySelector("#card-link-input");
 // close modal new post
 function handleAddCardSubmit(evt) {
-  // Prevent default browser behavior.
   evt.preventDefault();
 
   // Log both input values to the console.

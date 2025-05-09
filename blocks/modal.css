@@ -5,17 +5,19 @@
   justify-content: center;
   align-items: center;
   position: fixed;
+  padding: 10px;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-  z-index: 1000; /* Ensure it appears above other content */
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
   opacity: 0;
-  visibility: hidden; /* Hidden by default */
-  transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 .modal__title {
+  margin: 0;
   font-family: poppins, sans-serif, Arial;
   font-weight: 500;
   font-size: 32px;
@@ -30,21 +32,27 @@
   max-width: 730px;
   width: 100%;
   border-radius: 8px;
-  background-color: #ffffff; /* White background */
+  background-color: #ffffff;
   padding: 32px 50px;
   position: relative;
-  box-sizing: border-box; /* Ensure padding is included in width */
-  z-index: 1001; /* Ensure it appears above the modal background */
+  box-sizing: border-box;
+  z-index: 1001;
 }
 .modal__submit-btn {
+  font-size: 16px;
+  line-height: 100%;
+  font-weight: 500;
   cursor: pointer;
-  color: #fcf5e5; /* Light text color */
-  background-color: #212121; /* Dark background */
-  padding: 18px 32px; /* Adjusted padding for better button size */
-  border-radius: 8px; /* Rounded corners */
-  border: none; /* Remove default border */
-  width: 156px; /* Fixed width */
-  height: 52px; /* Fixed height */
+  color: #fcf5e5;
+  background-color: #212121;
+  padding: 18px 32px;
+  border-radius: 8px;
+  border: none;
+  width: 156px;
+  height: 52px;
+}
+.modal__submit-btn:hover {
+  opacity: 80%;
 }
 .modal__input {
   cursor: pointer;
@@ -52,13 +60,13 @@
   box-sizing: border-box;
   width: 100%;
   margin: auto;
-  padding: 12px 16px; /* Adjusted padding for better input size */
-  border-radius: 8px; /* Rounded corners */
-  border: 1px solid; /* Light border */
-  margin-bottom: 32px; /* Space between inputs */
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid;
+  margin-bottom: 32px;
 }
 .modal__close-btn {
-  background-image: url(../images/Group\ 27.svg); /* Close icon */
+  background-image: url(../images/Group\ 27.svg);
   opacity: 40%;
   position: absolute;
   top: 32px;
@@ -79,9 +87,16 @@
     font-size: 20px;
     font-weight: 500;
     margin: 0;
-    padding: 18px 32px;
   }
   .modal__submit-btn {
-    max-width: none; /* Remove max-width to allow for fixed width */
+    max-width: none;
+  }
+  .modal__input {
+    padding: 8px 12px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    line-height: 100%;
+    font-weight: 500;
+    color: #212121;
   }
 }
