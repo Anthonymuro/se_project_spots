@@ -46,7 +46,7 @@ editprofileform.addEventListener("submit", handleEditprofilesubmit);
 //new post modal
 const addCardModal = document.querySelector("#new-post-modal");
 const addCardFormElement = addCardModal.querySelector(".modal__form");
-const nameInput = addCardModal.querySelector("#card-name-input");
+const nameInput = addCardModal.querySelector("#card-title-input");
 const linkInput = addCardModal.querySelector("#card-link-input");
 // close modal new post
 function handleAddCardSubmit(evt) {
