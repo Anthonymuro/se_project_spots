@@ -1,64 +1,68 @@
 // edit profile modal
-const editprofilebtn = document.querySelector(".profile__edit-btn");
-const editprofilemodal = document.querySelector("#edit-profile-modal");
-const editprofileclosebtn = editprofilemodal.querySelector(".modal__close-btn");
-const editprofileform = editprofilemodal.querySelector(".modal__form");
-const editprofilenameinput = editprofilemodal.querySelector(
+const editProfileBtn = document.querySelector(".profile__edit-btn");
+const editProfileModal = document.querySelector("#edit-profile-modal");
+const editProfileCloseBtn = editProfileModal.querySelector(".modal__close-btn");
+const editProfileForm = editProfileModal.querySelector(".modal__form");
+const editProfileNameInput = editProfileModal.querySelector(
   "#profile-name-input"
 );
-const editprofiledescriptioninput = editprofilemodal.querySelector(
+const editProfileDescriptionInput = editProfileModal.querySelector(
   "#profile-description-input"
 );
+
 // new post modal
-const newpostbtn = document.querySelector(".profile__add-btn");
-const newpostmodal = document.querySelector("#new-post-modal");
-const newpostclosebtn = newpostmodal.querySelector(".modal__close-btn");
+const newPostBtn = document.querySelector(".profile__add-btn");
+const newPostModal = document.querySelector("#new-post-modal");
+const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
+
 // profile name and description
-const profilename = document.querySelector(".profile__name");
-const profiledescription = document.querySelector(".profile__description");
+const profileName = document.querySelector(".profile__name");
+const profileDescription = document.querySelector(".profile__description");
+
 // open modal new post
-newpostbtn.addEventListener("click", function () {
-  newpostmodal.classList.add("modal__is-opened");
+newPostBtn.addEventListener("click", function () {
+  newPostModal.classList.add("modal--is-opened");
 });
-//  close modal new post
-newpostclosebtn.addEventListener("click", function () {
-  newpostmodal.classList.remove("modal__is-opened");
-});
-// open modal edit profile
-editprofilebtn.addEventListener("click", function () {
-  editprofilenameinput.value = profilename.textContent;
-  editprofiledescriptioninput.value = profiledescription.textContent;
-  editprofilemodal.classList.add("modal__is-opened");
-});
-// close modal edit profile
-editprofileclosebtn.addEventListener("click", function () {
-  editprofilemodal.classList.remove("modal__is-opened");
-});
+
 // close modal new post
-function handleEditprofilesubmit(evt) {
+newPostCloseBtn.addEventListener("click", function () {
+  newPostModal.classList.remove("modal--is-opened");
+});
+
+// open modal edit profile
+editProfileBtn.addEventListener("click", function () {
+  editProfileNameInput.value = profileName.textContent;
+  editProfileDescriptionInput.value = profileDescription.textContent;
+  editProfileModal.classList.add("modal--is-opened");
+});
+
+// close modal edit profile
+editProfileCloseBtn.addEventListener("click", function () {
+  editProfileModal.classList.remove("modal--is-opened");
+});
+
+// submit edit profile form
+function handleEditProfileSubmit(evt) {
   evt.preventDefault();
-  profilename.textContent = editprofilenameinput.value;
-  profiledescription.textContent = editprofiledescriptioninput.value;
-  editprofilemodal.classList.remove("modal__is-opened");
+  profileName.textContent = editProfileNameInput.value;
+  profileDescription.textContent = editProfileDescriptionInput.value;
+  editProfileModal.classList.remove("modal--is-opened");
 }
-// the submit listener.
-editprofileform.addEventListener("submit", handleEditprofilesubmit);
-//new post modal
+
+editProfileForm.addEventListener("submit", handleEditProfileSubmit);
+
+// new post modal
 const addCardModal = document.querySelector("#new-post-modal");
 const addCardFormElement = addCardModal.querySelector(".modal__form");
-const nameInput = addCardModal.querySelector("#card-title-input");
-const linkInput = addCardModal.querySelector("#card-link-input");
-// close modal new post
+const nameInput = addCardModal.querySelector("#profile-description-input");
+const linkInput = addCardModal.querySelector("#card-image-input");
+
+// submit new post form
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
-
-  // Log both input values to the console.
   console.log("Card Name:", nameInput.value);
   console.log("Card Link:", linkInput.value);
-
-  // Close the modal.
-  addCardModal.classList.remove("modal__is-opened");
+  addCardModal.classList.remove("modal--is-opened");
 }
 
-// the submit listener.
 addCardFormElement.addEventListener("submit", handleAddCardSubmit);
