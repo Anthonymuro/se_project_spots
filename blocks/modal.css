@@ -24,7 +24,8 @@
   font-size: 32px;
   line-height: 100%;
 }
-.modal--is-opened {
+.modal_is-opened {
+  /*fixed*/
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
@@ -59,8 +60,8 @@
   opacity: 80%;
 }
 .modal__input {
+  font-family: poppins, Arial, sans-serif;
   font-size: 20px;
-  /* line-height: 100%; */
   min-height: 48px;
   height: fit-content;
   font-weight: 500;
@@ -72,8 +73,17 @@
   margin: auto;
   padding: 12px 16px;
   border-radius: 8px;
-  border: 1px solid rgba(33, 33, 33, 0.7);
+  border: 1px solid rgba(33, 33, 33, 0.4); /* fixed as stated in the task  was a 0.7*/
   margin-bottom: 32px;
+}
+.modal__input::placeholder {
+  font: poppins, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #212121;
+}
+.modal__input:hover {
+  border: 1px solid #212121;
 }
 .modal__close-btn {
   background-image: url(../images/Group\ 27.svg);
@@ -92,10 +102,23 @@
   opacity: 100%;
 }
 .modal__form {
+  font-size: 16px;
   display: flex;
   flex-direction: column;
   gap: 10px;
   min-height: 52px;
+  color: #212121;
+}
+.modal__label {
+  display: flex;
+  flex-direction: column;
+  font-family: poppins, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  gap: 8px;
+  color: #212121;
+  opacity: 70%;
+  line-height: 110%;
 }
 
 @media screen and (max-width: 627px) {
@@ -118,5 +141,11 @@
   }
   .modal__title {
     font-size: 20px;
+  }
+  .modal__label {
+    margin-bottom: 24px;
+    font-size: 16px;
+    /* line-height: 17.6px; */
+    color: rgba(33, 33, 33, 0.4);
   }
 }
