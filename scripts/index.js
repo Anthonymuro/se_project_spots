@@ -104,15 +104,25 @@ editProfileForm.addEventListener("submit", handleEditProfileSubmit);
 // Submit new post form
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
-  console.log("Card Name:", nameInput.value);
-  console.log("Card Link:", linkInput.value);
+  const inputValues = {
+    name: nameInput.value.trim(),
+    link: linkInput.value.trim(),
+  };
+
+  // console.log("Card Name:", nameInput.value);
+  // console.log("Card Link:", linkInput.value);
+
+  const cardElement = getCardElement(inputValues);
+  cardsList.prepend(cardElement);
+
+  addCardFormElement.reset(); // Clear form fields
   closeModal(newPostModal);
 }
 
 addCardFormElement.addEventListener("submit", handleAddCardSubmit);
 
-// Display initial cards in the console
+// Initial cards rendering
 initialCards.forEach((item) => {
   const cardElement = getCardElement(item);
-  cardsList.prepend(cardElement);
+  cardsList.append(cardElement);
 });
