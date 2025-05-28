@@ -57,7 +57,25 @@ const linkInput = newPostModal.querySelector("#card-image-input");
 // Profile display elements
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
+// Card template
+const cardTemplate = document.querySelector("#card-template").content;
+cardTemplate.querySelector(".card");
+const cardsList = document.querySelector(".cards__list");
 
+// Card element creation function
+function getCardElement(data) {
+  const cardElement = cardTemplate.cloneNode(true);
+  const cardTitle = cardElement.querySelector(".card__title");
+  cardTitle.textContent = data.name;
+  const cardImage = cardElement.querySelector(".card__image");
+
+  cardImage.src = data.link;
+  cardImage.alt = data.name;
+  cardTitle.textContent = data.name;
+
+  return cardElement;
+}
+console.log("data");
 // Open modals
 newPostBtn.addEventListener("click", () => openModal(newPostModal));
 
@@ -95,6 +113,6 @@ addCardFormElement.addEventListener("submit", handleAddCardSubmit);
 
 // Display initial cards in the console
 initialCards.forEach((item) => {
-  console.log(item.name);
-  console.log(item.link);
+  const cardElement = getCardElement(item);
+  cardsList.prepend(cardElement);
 });
