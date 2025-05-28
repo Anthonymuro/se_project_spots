@@ -44,6 +44,13 @@
   opacity: 40%;
   cursor: pointer;
 }
+.card__like-button_active {
+  background-image: url(../images/Liked.svg);
+  opacity: 100%;
+}
+.card__like-button_active:hover {
+  opacity: 0.33;
+}
 .card__like-button:hover {
   opacity: 100%;
 }

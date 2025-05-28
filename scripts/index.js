@@ -34,7 +34,7 @@ function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
 }
 
-// Edit profile modal
+// Profile modal elements
 const editProfileBtn = document.querySelector(".profile__edit-btn");
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileCloseBtn = editProfileModal.querySelector(".modal__close-btn");
@@ -46,7 +46,7 @@ const editProfileDescriptionInput = editProfileModal.querySelector(
   "#profile-description-input"
 );
 
-// New post modal
+// New card modal elements
 const newPostBtn = document.querySelector(".profile__add-btn");
 const newPostModal = document.querySelector("#new-post-modal");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
@@ -57,28 +57,31 @@ const linkInput = newPostModal.querySelector("#card-image-input");
 // Profile display elements
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
-// Card template
+
+// Card list and template
 const cardTemplate = document.querySelector("#card-template").content;
-cardTemplate.querySelector(".card");
 const cardsList = document.querySelector(".cards__list");
 
 // Card element creation function
 function getCardElement(data) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardTitle = cardElement.querySelector(".card__title");
-  cardTitle.textContent = data.name;
   const cardImage = cardElement.querySelector(".card__image");
+  const cardLikeButton = cardElement.querySelector(".card__like-button");
 
+  cardTitle.textContent = data.name;
   cardImage.src = data.link;
   cardImage.alt = data.name;
-  cardTitle.textContent = data.name;
+
+  cardLikeButton.addEventListener("click", () => {
+    cardLikeButton.classList.toggle("card__like-button_active");
+  });
 
   return cardElement;
 }
-console.log("data");
+
 // Open modals
 newPostBtn.addEventListener("click", () => openModal(newPostModal));
-
 editProfileBtn.addEventListener("click", () => {
   editProfileNameInput.value = profileName.textContent;
   editProfileDescriptionInput.value = profileDescription.textContent;
@@ -104,13 +107,11 @@ editProfileForm.addEventListener("submit", handleEditProfileSubmit);
 // Submit new post form
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
+
   const inputValues = {
     name: nameInput.value.trim(),
     link: linkInput.value.trim(),
   };
-
-  // console.log("Card Name:", nameInput.value);
-  // console.log("Card Link:", linkInput.value);
 
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
