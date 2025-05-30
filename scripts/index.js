@@ -1,5 +1,9 @@
 const initialCards = [
   {
+    name: "Golden Gate Bridge",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
+  },
+  {
     name: "Val Thorens",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
   },
@@ -65,9 +69,11 @@ const cardsList = document.querySelector(".cards__list");
 // Card element creation function
 function getCardElement(data) {
   const cardElement = cardTemplate.cloneNode(true);
+  const card = cardElement.querySelector(".card");
   const cardTitle = cardElement.querySelector(".card__title");
   const cardImage = cardElement.querySelector(".card__image");
   const cardLikeButton = cardElement.querySelector(".card__like-button");
+  const cardDeleteButton = card.querySelector(".card__delete-button");
 
   cardTitle.textContent = data.name;
   cardImage.src = data.link;
@@ -75,6 +81,11 @@ function getCardElement(data) {
 
   cardLikeButton.addEventListener("click", () => {
     cardLikeButton.classList.toggle("card__like-button_active");
+  });
+
+  cardDeleteButton.addEventListener("click", () => {
+    card.remove();
+    card = null; // Clear reference to the card
   });
 
   return cardElement;
