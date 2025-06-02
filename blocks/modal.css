@@ -16,6 +16,9 @@
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
+.modal_type_preview {
+  padding: 0 16px;
+}
 .modal__title {
   margin: 0;
   font-family: poppins, Arial, sans-serif;
@@ -73,11 +76,11 @@
   margin: auto;
   padding: 12px 16px;
   border-radius: 8px;
-  border: 1px solid rgba(33, 33, 33, 0.4); /* fixed as stated in the task  was a 0.7*/
+  border: 1px solid rgba(33, 33, 33, 0.4);
   margin-bottom: 32px;
 }
 .modal__input::placeholder {
-  font: poppins, Arial, sans-serif;
+  font-family: poppins, Arial, sans-serif;
   font-size: 20px;
   font-weight: 500;
   color: #212121;
@@ -97,6 +100,7 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+  margin-right: 10px;
 }
 .modal__close-btn:hover {
   opacity: 100%;
@@ -118,6 +122,7 @@
   color: rgb(33, 33, 33, 0.4);
   line-height: 110%;
 }
+/* modal preview */
 .modal_type_image {
   padding: 0;
   max-width: 80vh;
@@ -134,6 +139,7 @@
   display: block;
   max-width: 80vh;
   max-height: 80vh;
+  border-radius: 8px;
   /* position: relative; */
 }
 .modal__caption {
@@ -141,22 +147,32 @@
 }
 .modal__image_close-btn {
   /* padding: 0; */
-  right: -50px;
+  right: -52.5px;
   top: -5px;
+  /* position: relative; */
+}
+@media screen and (max-width: 756px) {
+  .modal__image_close-btn {
+    right: 0;
+    top: -48px;
+  }
 }
 
-@media screen and (max-width: 627px) {
+@media screen and (max-width: 626px) {
   .modal__container {
     padding: 22px 12px;
+    position: absolute;
   }
+
   .modal__close-btn {
     padding-left: 4px;
     margin: 0;
-    top: 22px;
+    /* top: 22px; */
     right: 12px;
     width: 32px;
     height: 32px;
   }
+
   .modal__submit-btn {
     padding: 18px 32px;
     width: 100%;
@@ -171,7 +187,15 @@
   .modal__label {
     margin-bottom: 24px;
     font-size: 16px;
-    /* line-height: 17.6px; */
     color: rgba(33, 33, 33, 0.4);
+  }
+}
+@media screen and (max-width: 427px) {
+  .modal__image_close-btn {
+    right: 0;
+    top: -48px;
+  }
+  .modal__image {
+    max-width: unset;
   }
 }
