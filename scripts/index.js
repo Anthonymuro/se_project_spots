@@ -88,9 +88,19 @@ function getCardElement(data) {
     card = null; // Clear reference to the card
   });
 
+  cardImage.addEventListener("click", () => {
+    previewImage.src = data.link;
+    previewImage.alt = data.name;
+    openModal(previewModal);
+  });
+
   return cardElement;
 }
-
+// Preview modal elements
+const previewModal = document.querySelector("#preview-modal");
+const previewModalCloseBtn = previewModal.querySelector(".modal__close-btn");
+const previewImage = previewModal.querySelector(".modal__image");
+// select name element
 // Open modals
 newPostBtn.addEventListener("click", () => openModal(newPostModal));
 editProfileBtn.addEventListener("click", () => {
