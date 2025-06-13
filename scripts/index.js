@@ -85,7 +85,6 @@ function getCardElement(data) {
 
   cardDeleteButton.addEventListener("click", () => {
     card.remove();
-    card = null; // Clear reference to the card
   });
 
   cardImage.addEventListener("click", () => {
@@ -93,6 +92,9 @@ function getCardElement(data) {
     previewImage.alt = data.name;
     openModal(previewModal);
   });
+  previewModalCloseBtn.addEventListener("click", () =>
+    closeModal(previewModal)
+  );
 
   return cardElement;
 }
@@ -100,6 +102,7 @@ function getCardElement(data) {
 const previewModal = document.querySelector("#preview-modal");
 const previewModalCloseBtn = previewModal.querySelector(".modal__close-btn");
 const previewImage = previewModal.querySelector(".modal__image");
+
 // select name element
 // Open modals
 newPostBtn.addEventListener("click", () => openModal(newPostModal));
