@@ -82,9 +82,9 @@
 /* Modal Image */
 .modal__image {
   width: 100%;
-  max-width: 80vh;
+  max-width: 90vh;
   max-height: 80vh;
-  object-fit: contain;
+  /* object-fit: contain; */
   display: block;
   border-radius: 8px;
 }
@@ -101,11 +101,12 @@
   border-radius: 8px;
   box-sizing: border-box;
   width: fit-content;
-  max-width: 80vh;
+  max-width: 90vh;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   align-self: flex-start;
+  margin-top: 16px;
 }
 
 /* Close Button for Preview Image */
@@ -136,14 +137,45 @@
     top: -48px;
   }
 }
+@media screen and (max-width: 756px) {
+  .modal__container {
+    padding: 24px;
+    gap: 24px;
+  }
+}
+.modal__caption {
+  font-size: 18px;
+  padding: 4px 6px;
+  margin-top: 12px;
+}
+/* 320px Mobile Layout */
+@media screen and (max-width: 400px) {
+  .modal__container {
+    padding: 16px;
+    gap: 16px;
+  }
+}
 
-@media screen and (max-width: 427px) {
+@media screen and (max-width: 320px) {
   .modal__image_close-btn {
     right: 0;
     top: -48px;
   }
 
   .modal__image {
-    max-width: unset;
+    max-width: 90vw;
+    max-height: 60vh;
+  }
+  .modal__caption {
+    font-size: 16px;
+    padding: 4px 6px;
+    margin-top: 12px;
+  }
+  .modal__image_close-btn {
+    right: 8px;
+    top: -40px;
+    width: 32px;
+    height: 32px;
+    background-size: 32px 32px;
   }
 }
