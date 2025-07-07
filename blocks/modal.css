@@ -19,6 +19,15 @@
   pointer-events: none;
 }
 
+.modal__title {
+  margin: 0;
+  font-family: poppins, Arial, sans-serif;
+  color: #212121;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 100%;
+}
+
 /* Modifier: Opened Modal */
 .modal_is-opened {
   visibility: visible;
@@ -28,7 +37,7 @@
 
 /* Modifier: Preview Modal */
 .modal_type_preview {
-  padding: 0;
+  padding: 0, 16px;
 }
 
 /* Base Modal Container */
@@ -46,10 +55,34 @@
   gap: 32px;
 }
 
+.modal__input::placeholder {
+  font-family: poppins, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #212121;
+}
+
 /* Modifier: Image Modal Container */
 .modal__container_type_image {
   padding: 0;
   background-color: transparent;
+}
+.modal__submit-btn {
+  font-size: 16px;
+  line-height: 100%;
+  font-weight: 500;
+  cursor: pointer;
+  color: #fcf5e5;
+  background-color: #212121;
+  padding: 18px 32px;
+  border-radius: 8px;
+  border: none;
+  width: 156px;
+  height: 52px;
+}
+
+.modal__submit-btn:hover {
+  opacity: 80%;
 }
 
 /* Close Button */
@@ -61,8 +94,9 @@
   padding: 0;
   opacity: 0.4;
   position: absolute;
-  top: -10px;
-  right: -50px;
+  top: auto;
+  bottom: auto;
+  right: 40px;
   width: 40px;
   height: 40px;
   background-color: transparent;
@@ -112,11 +146,14 @@
 /* Close Button for Preview Image */
 .modal__image_close-btn {
   position: absolute;
-  right: -52.5px;
-  top: -5px;
+  /* right: -52.5px;
+  top: -5px; */
+  top: 12px;
+  right: 12px;
+  background-image: url(../images/delete.image.svg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  /* background-size: contain; */
   background-color: transparent;
   border: none;
   width: 40px;
@@ -129,7 +166,52 @@
 .modal__image_close-btn:hover {
   opacity: 1;
 }
+.modals__submit-btn {
+  max-width: 156px;
+}
+.modal__input {
+  font-family: poppins, Arial, sans-serif;
+  font-size: 20px;
+  min-height: 48px;
+  height: fit-content;
+  font-weight: 500;
+  color: #212121;
+  cursor: pointer;
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  margin: auto;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(33, 33, 33, 0.4); /* fixed as stated in the task  was a 0.7*/
+  margin-bottom: 32px;
+}
 
+.modal__input::placeholder {
+  font: poppins, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #212121;
+}
+
+.modal__form {
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  min-height: 52px;
+  color: #212121;
+}
+.modal__label {
+  display: flex;
+  flex-direction: column;
+  font-family: poppins, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  gap: 8px;
+  color: rgb(33, 33, 33, 0.4);
+
+  line-height: 110%;
+}
 /* Media Queries */
 @media screen and (max-width: 756px) {
   .modal__image_close-btn {
