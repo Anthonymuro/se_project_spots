@@ -27,7 +27,23 @@
 
 /* Modifier: Preview Modal */
 .modal_type_preview {
-  padding: 0, 16px;
+  padding: 0px;
+}
+.modal__close_type_preview {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  background-image: url(../images/close.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
 }
 
 /* Base Modal Container */
@@ -46,6 +62,7 @@
 }
 /* Modifier: Image Modal Container */
 .modal__container_type_image {
+  max-width: fit-content;
   padding: 0;
   background-color: transparent;
 }
@@ -175,22 +192,19 @@
   align-self: flex-start;
   margin-top: 12px;
 }
-
-/* Close Button for Preview Image */
-.modal__image_close-btn {
+/* modal close button for preview image */
+.modal__close_type_preview {
   position: absolute;
-  /* right: -52.5px;
-  top: -5px; */
   top: 12px;
-  right: 12px;
-  background-image: url(../images/delete.image.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  /* background-size: contain; */
-  background-color: transparent;
-  border: none;
+  right: -52.5px;
   width: 40px;
   height: 40px;
+  background-color: transparent;
+  background-image: url(../images/Group\ 27.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: none;
   cursor: pointer;
   opacity: 0.4;
   transition: opacity 0.3s ease;
@@ -200,19 +214,36 @@
   opacity: 1;
 }
 
-/* .modal__form {
-  font-size: 16px;
-  display: flex;
-  flex-direction: column;
-  min-height: 52px;
-  color: #212121;
-} */
-
 /* Media Queries */
 @media screen and (max-width: 756px) {
   .modal__image_close-btn {
     right: 0;
     top: -48px;
+  }
+}
+@media screen and (max-width: 756px) {
+  .modal__close {
+    top: 5px;
+    right: 5px;
+  }
+
+  .modal__close_type_preview {
+    right: 15px;
+    top: -25px;
+  }
+
+  .modal__submit-btn {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .modal__title {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .modal__label {
+    font-size: 16px;
   }
 }
 @media screen and (max-width: 756px) {
