@@ -82,7 +82,7 @@
   color: #212121;
 }
 .modal__label {
-  display: flex;
+  display: block;
   flex-direction: column;
   font-family: poppins, Arial, sans-serif;
   font-weight: 500;
@@ -90,6 +90,7 @@
   gap: 8px;
   color: rgb(33, 33, 33, 0.4);
   line-height: 110%;
+  margin-bottom: 32px;
 }
 .modal__input {
   font-family: poppins, Arial, sans-serif;
@@ -102,11 +103,10 @@
   display: flex;
   box-sizing: border-box;
   width: 100%;
-  margin: auto;
+  margin: 8px 0 0;
   padding: 12px 16px;
   border-radius: 8px;
-  border: 1px solid rgba(33, 33, 33, 0.4); /* fixed as stated in the task  was a 0.7*/
-  margin-bottom: 32px;
+  border: 1px solid rgba(33, 33, 33, 0.4);
 }
 
 .modal__input::placeholder {
@@ -122,6 +122,7 @@
 .modal__input-error {
   display: block;
   color: red;
+  margin-top: 8px;
 }
 .modal__submit-btn {
   max-width: 156px;
