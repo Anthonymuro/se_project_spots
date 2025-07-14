@@ -8,7 +8,7 @@ const showInputError = (formElement, inputElement, errorMessage) => {
 const hideInputError = (formElement, inputElement) => {
   const errorElementId = inputElement.id + "-error";
   const errorMessageElement = formElement.querySelector("#" + errorElementId);
-  errorMessageElement.textContent = "";
+  errorMessageElement.textContent = errorMessage;
   inputElement.classList.remove("modal__input_type_error");
 };
 
@@ -24,8 +24,8 @@ const togglebuttonState = (inputList, buttonElement) => {
   const hasInvalidInput = inputList.some(
     (inputElement) => !inputElement.validity.valid
   );
-  buttonElement.disabled = hasInvalidInput;
-  buttonElement.classList.toggle("modal__submit-btn_disabled", hasInvalidInput);
+  //   buttonElement.disabled = hasInvalidInput;
+  //   buttonElement.classList.toggle("modal__submit-btn_disabled", hasInvalidInput);
 };
 
 const setEventListeners = (formElement) => {
