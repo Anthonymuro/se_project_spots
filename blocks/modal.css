@@ -123,7 +123,11 @@
   display: block;
   color: red;
   margin-top: 8px;
+  font-size: 12px;
 }
+/* .modal__input_type_error {
+  border: 1px solid red;
+} */
 .modal__submit-btn {
   max-width: 156px;
   font-size: 16px;
