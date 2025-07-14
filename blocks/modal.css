@@ -120,6 +120,12 @@
   border-color: #212121;
   opacity: 30%;
 }
+.modal__input:focus {
+  border-color: #212121;
+  outline: 2px solid #212121;
+  outline-offset: 2px;
+}
+
 .modal__input-error {
   font-family: poppins, Arial, sans-serif;
   font-weight: 500;
@@ -234,14 +240,13 @@
   opacity: 0.4;
   transition: opacity 0.3s ease;
 }
-
-.modal__image_close-btn:hover {
+.modal__close_type_preview:hover {
   opacity: 1;
 }
 
 /* Media Queries */
 @media screen and (max-width: 756px) {
-  .modal__image_close-btn {
+  .modal__close_type_preview {
     right: 0;
     top: -48px;
   }
@@ -276,11 +281,6 @@
     padding: 24px;
     gap: 24px;
   }
-}
-.modal__caption {
-  font-size: 18px;
-  padding: 4px 6px;
-  margin-top: 12px;
 }
 /* 320px Mobile Layout */
 @media screen and (max-width: 400px) {

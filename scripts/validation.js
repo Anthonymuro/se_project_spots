@@ -19,16 +19,30 @@ const checkInputValidity = (formElement, inputElement) => {
     hideInputError(formElement, inputElement);
   }
 };
+
 const hasInvalidInput = (inputList) => {
-  return inputList.some((input) => {
-    return !input.validity.valid;
+  return inputList.some((input) => !input.validity.valid);
+};
+
+const disableSubmitButton = (buttonElement) => {
+  buttonElement.disabled = true;
+  buttonElement.classList.add("modal__submit-btn_disabled");
+};
+
+const resetValidation = (formElement) => {
+  const inputList = Array.from(formElement.querySelectorAll(".modal__input"));
+  const buttonElement = formElement.querySelector(".modal__submit-btn");
+
+  inputList.forEach((inputElement) => {
+    hideInputError(formElement, inputElement);
   });
+
+  toggleButtonState(inputList, buttonElement);
 };
 
 const toggleButtonState = (inputList, buttonElement) => {
   if (hasInvalidInput(inputList)) {
-    buttonElement.disabled = true;
-    buttonElement.classList.add("modal__submit-btn_disabled");
+    disableSubmitButton(buttonElement);
   } else {
     buttonElement.disabled = false;
     buttonElement.classList.remove("modal__submit-btn_disabled");
@@ -50,8 +64,8 @@ const setEventListeners = (formElement) => {
 };
 
 const enableValidation = () => {
-  const formlist = document.querySelectorAll(".modal__form");
-  formlist.forEach((formElement) => {
+  const formList = document.querySelectorAll(".modal__form");
+  formList.forEach((formElement) => {
     setEventListeners(formElement);
   });
 };
