@@ -41,11 +41,28 @@ const initialCards = [
 
 // === Utility functions ===
 function openModal(modal) {
+  if (!modal) return;
   modal.classList.add("modal_is-opened");
+  function handleEscape(evt) {
+    if (evt.key === "Escape") {
+      closeModal(modal);
+    }
+  }
+  function handleOverlayClick(evt) {
+    if (evt.target === modal) {
+      closeModal(modal);
+    }
+  }
+
+  document.addEventListener("keydown", handleEscape);
+  modal.addEventListener("click", handleOverlayClick);
 }
 
 function closeModal(modal) {
+  if (!modal) return;
   modal.classList.remove("modal_is-opened");
+  document.removeEventListener("keydown", modal._handleEscClose);
+  modal.removeEventListener("mousedown", modal._handleOverlayClick);
 }
 
 // === Profile modal elements ===
@@ -117,7 +134,21 @@ editProfileBtn.addEventListener("click", () => {
   editProfileNameInput.value = profileName.textContent;
   editProfileDescriptionInput.value = profileDescription.textContent;
   openModal(editProfileModal);
+  resetValidation(editProfileForm, settings);
+  openModal(editProfileModal);
 });
+function resetValidation(formElement, settings) {
+  const inputList = Array.from(
+    formElement.querySelectorAll(settings.inputSelector)
+  );
+  const buttonElement = formElement.querySelector(
+    settings.submitButtonSelector
+  );
+  inputList.forEach((inputElement) => {
+    hideInputError(formElement, inputElement, settings);
+  });
+  toggleButtonState(inputList, buttonElement, settings);
+}
 
 // === Submit profile form ===
 function handleEditProfileSubmit(evt) {
@@ -156,6 +187,7 @@ addCardFormElement.addEventListener("submit", handleAddCardSubmit);
 initialCards.forEach((item) => {
   const cardElement = getCardElement(item);
   cardsList.append(cardElement);
+  resetValidation(addCardFormElement, settings);
 });
 
 // === Enable validation ===

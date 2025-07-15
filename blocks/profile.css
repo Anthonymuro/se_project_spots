@@ -12,7 +12,7 @@
   border-radius: 8px;
 }
 .profile__column {
-  margin: 0, 0 10px;
+  margin: 0 0 10px;
   display: flex;
   flex-direction: column;
 }
