@@ -187,7 +187,6 @@ addCardFormElement.addEventListener("submit", handleAddCardSubmit);
 initialCards.forEach((item) => {
   const cardElement = getCardElement(item);
   cardsList.append(cardElement);
-  resetValidation(addCardFormElement, settings);
 });
 
 // === Enable validation ===
