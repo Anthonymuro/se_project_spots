@@ -194,7 +194,5 @@ function enableValidation(settings) {
   const formList = document.querySelectorAll(settings.formSelector);
   formList.forEach((formElement) => {
     setEventListeners(formElement, settings);
-    let enableValidation = true;
-    enableValidation = false;
   });
 }
