@@ -137,18 +137,18 @@ editProfileBtn.addEventListener("click", () => {
   resetValidation(editProfileForm, settings);
   openModal(editProfileModal);
 });
-function resetValidation(formElement, settings) {
-  const inputList = Array.from(
-    formElement.querySelectorAll(settings.inputSelector)
-  );
-  const buttonElement = formElement.querySelector(
-    settings.submitButtonSelector
-  );
-  inputList.forEach((inputElement) => {
-    hideInputError(formElement, inputElement, settings);
-  });
-  toggleButtonState(inputList, buttonElement, settings);
-}
+// function resetValidation(formElement, settings) {
+//   const inputList = Array.from(
+//     formElement.querySelectorAll(settings.inputSelector)
+//   );
+//   const buttonElement = formElement.querySelector(
+//     settings.submitButtonSelector
+//   );
+//   inputList.forEach((inputElement) => {
+//     hideInputError(formElement, inputElement, settings);
+//   });
+//   toggleButtonState(inputList, buttonElement, settings);
+// }
 
 // === Submit profile form ===
 function handleEditProfileSubmit(evt) {
@@ -190,9 +190,9 @@ initialCards.forEach((item) => {
 });
 
 // === Enable validation ===
-function enableValidation(settings) {
-  const formList = document.querySelectorAll(settings.formSelector);
-  formList.forEach((formElement) => {
-    setEventListeners(formElement, settings);
-  });
-}
+// function enableValidation(settings) {
+//   const formList = document.querySelectorAll(settings.formSelector);
+//   formList.forEach((formElement) => {
+//     setEventListeners(formElement, settings);
+//   });
+// }
