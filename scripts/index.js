@@ -1,4 +1,3 @@
-// === Validation settings and initialization ===
 const settings = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
@@ -39,7 +38,7 @@ const initialCards = [
   },
 ];
 
-// === Utility functions ===
+//  Utility functions
 function openModal(modal) {
   if (!modal) return;
   modal.classList.add("modal_is-opened");
@@ -65,7 +64,7 @@ function closeModal(modal) {
   modal.removeEventListener("mousedown", modal._handleOverlayClick);
 }
 
-// === Profile modal elements ===
+// Profile modal elements
 const editProfileBtn = document.querySelector(".profile__edit-btn");
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileForm = editProfileModal.querySelector(".modal__form");
@@ -76,27 +75,27 @@ const editProfileDescriptionInput = editProfileModal.querySelector(
   "#profile-description-input"
 );
 
-// === New card modal elements ===
+// New card modal elements
 const newPostBtn = document.querySelector(".profile__add-btn");
 const newPostModal = document.querySelector("#new-post-modal");
 const addCardFormElement = newPostModal.querySelector(".modal__form");
 const nameInput = newPostModal.querySelector("#card-name-input");
 const linkInput = newPostModal.querySelector("#card-image-input");
 
-// === Profile display elements ===
+// Profile display elements
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
 
-//=== Card list and template ===
+// Card list and template
 const cardTemplate = document.querySelector("#card-template").content;
 const cardsList = document.querySelector(".cards__list");
 
-// === Preview modal elements ===
+//  Preview modal elements
 const previewModal = document.querySelector("#preview-modal");
 const previewImage = previewModal.querySelector(".modal__image");
 const previewCaption = previewModal.querySelector(".modal__caption");
 
-// === Card element creation function ===
+// Card element creation function
 function getCardElement(data) {
   const cardElement = cardTemplate.cloneNode(true);
   const card = cardElement.querySelector(".card");
@@ -127,8 +126,11 @@ function getCardElement(data) {
   return cardElement;
 }
 
-// === Modal event listeners ===
-newPostBtn.addEventListener("click", () => openModal(newPostModal));
+//  Modal event listeners
+newPostBtn.addEventListener("click", () => {
+  resetValidation(addCardFormElement, settings);
+  openModal(newPostModal);
+});
 
 editProfileBtn.addEventListener("click", () => {
   editProfileNameInput.value = profileName.textContent;
@@ -137,20 +139,8 @@ editProfileBtn.addEventListener("click", () => {
   resetValidation(editProfileForm, settings);
   openModal(editProfileModal);
 });
-// function resetValidation(formElement, settings) {
-//   const inputList = Array.from(
-//     formElement.querySelectorAll(settings.inputSelector)
-//   );
-//   const buttonElement = formElement.querySelector(
-//     settings.submitButtonSelector
-//   );
-//   inputList.forEach((inputElement) => {
-//     hideInputError(formElement, inputElement, settings);
-//   });
-//   toggleButtonState(inputList, buttonElement, settings);
-// }
 
-// === Submit profile form ===
+//  Submit profile form
 function handleEditProfileSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = editProfileNameInput.value;
@@ -166,7 +156,7 @@ closeButtons.forEach((button) => {
   button.addEventListener("click", () => closeModal(modal));
 });
 
-// === Submit new post form ===
+// Submit new post form
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
 
@@ -183,16 +173,8 @@ function handleAddCardSubmit(evt) {
 
 addCardFormElement.addEventListener("submit", handleAddCardSubmit);
 
-// === Render initial cards ===
+//  Render initial cards
 initialCards.forEach((item) => {
   const cardElement = getCardElement(item);
   cardsList.append(cardElement);
 });
-
-// === Enable validation ===
-// function enableValidation(settings) {
-//   const formList = document.querySelectorAll(settings.formSelector);
-//   formList.forEach((formElement) => {
-//     setEventListeners(formElement, settings);
-//   });
-// }

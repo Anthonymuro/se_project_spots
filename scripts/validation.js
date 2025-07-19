@@ -86,25 +86,6 @@ const setEventListeners = (formElement, settings) => {
       toggleButtonState(inputList, buttonElement, settings);
     });
   });
-
-  formElement.addEventListener("submit", (evt) => {
-    evt.preventDefault();
-
-    let formIsValid = true;
-    inputList.forEach((inputElement) => {
-      checkInputValidity(formElement, inputElement, settings);
-      if (!inputElement.validity.valid) {
-        formIsValid = false;
-      }
-    });
-
-    if (formIsValid) {
-      console.log("Form is valid. Submitting...");
-      // Here you can handle the form submission
-    } else {
-      console.log("Form is invalid.");
-    }
-  });
 };
 
 const enableValidation = (settings) => {
@@ -113,26 +94,5 @@ const enableValidation = (settings) => {
     setEventListeners(formElement, settings);
   });
 };
-
-// === Settings ===
-// const settings = {
-//   formSelector: ".modal__form",
-//   inputSelector: ".modal__input",
-//   submitButtonSelector: ".modal__submit-btn",
-//   inactiveButtonClass: "modal__submit-btn_disabled",
-//   inputErrorClass: "modal__input_type_error",
-//   errorClass: "modal__input-error",
-// };
-
-// === Initialize on DOM ready ===
-// document.addEventListener("DOMContentLoaded", () => {
-//   enableValidation(settings);
-
-//   // Reset validation state for all forms (optional)
-//   const formList = document.querySelectorAll(settings.formSelector);
-//   formList.forEach((formElement) => {
-//     resetValidation(formElement, settings);
-//   });
-// });
 
 enableValidation(settings);
